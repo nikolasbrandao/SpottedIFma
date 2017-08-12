@@ -1,10 +1,13 @@
 package br.edu.ifma.labmov.spotted.model;
 
 
+import java.util.Date;
+
 public class AlunoInfracao {
     private int idAluno;
     private int idInfracao;
     private boolean status;
+    private Date dataInfracao;
 
     public int getIdAluno() {
         return idAluno;
@@ -28,5 +31,13 @@ public class AlunoInfracao {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Date getDataInfracao() {
+        return dataInfracao;
+    }
+
+    public void setDataInfracao(Date dataInfracao) {
+        this.dataInfracao = dataInfracao;
     }
 }
