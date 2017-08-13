@@ -1,6 +1,6 @@
 package br.edu.ifma.labmov.spotted.model;
 
-public class Infração {
+public class Infracao {
     private int id;
     private String descricao;
     private String classificacao;
