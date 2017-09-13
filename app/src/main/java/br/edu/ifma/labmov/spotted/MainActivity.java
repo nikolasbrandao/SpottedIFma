@@ -1,11 +1,11 @@
 package br.edu.ifma.labmov.spotted;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
         String senha = txtSenha.getText().toString();
         String torradeira = "Usuario: "+ usuario + "Senha: " + senha;
         Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
+    }
+
+    public void navegaActivityLogin(View view){
+        Intent navegaLogin = new Intent(this, CriarUsuarioForm.class);
+        startActivity(navegaLogin);
     }
 }
