@@ -21,7 +21,7 @@ public class InfracaoDao extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE Infracao (" +
-                "id INTEGER PRIMARY KEY AUTO INCREMENT, " +
+                "id INTEGER PRIMARY KEY, " +
                 "descricao TEXT NOT NULL, " +
                 "classificacao TEXT NOT NULL, " +
                 "gravidade INTEGER NOT NULL)";

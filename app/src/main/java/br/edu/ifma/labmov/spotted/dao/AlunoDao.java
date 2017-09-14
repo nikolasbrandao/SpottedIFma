@@ -20,7 +20,7 @@ public class AlunoDao extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE Aluno (" +
-                "id INTEGER PRIMARY KEY AUTO INCREMENT, " +
+                "id INTEGER PRIMARY KEY, " +
                 "nome TEXT NOT NULL, " +
                 "codigo TEXT NOT NULL, " +
                 "turma TEXT NOT NULL, " +

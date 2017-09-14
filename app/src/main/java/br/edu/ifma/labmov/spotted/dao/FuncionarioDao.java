@@ -21,11 +21,7 @@ public class FuncionarioDao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Funcionario (" +
-                "id INTEGER PRIMARY KEY AUTO INCREMENT, " +
-                "nome TEXT NOT NULL, " +
-                "email TEXT NOT NULL, " +
-                "senha TEXT NOT NULL)";
+        String sql = "CREATE TABLE Funcionario (id INTEGER PRIMARY KEY, nome TEXT NOT NULL, email TEXT NOT NULL, senha TEXT NOT NULL);";
         db.execSQL(sql);
 
     }

@@ -28,7 +28,6 @@ public class CriarUsuarioForm extends AppCompatActivity {
         edtSenhaFuncionario = (EditText) findViewById(R.id.edtSenhaFuncionario);
         edtSenhaRepetidaFuncionario = (EditText) findViewById(R.id.edtSenhaRepetidaFuncionario);
         funcionario = new Funcionario();
-        daoFuncionario = new FuncionarioDao(this);
     }
 
     public void salvarFuncionario(View view){
@@ -42,11 +41,13 @@ public class CriarUsuarioForm extends AppCompatActivity {
             funcionario.setNome(nome);
             funcionario.setEmail(email);
             funcionario.setSenha(senha);
+            daoFuncionario = new FuncionarioDao(this);
             daoFuncionario.insert(funcionario);
             torradeira = "Funcionario salvo com sucesso";
         }else {
             torradeira = "Suas senhas não estão iguais";
         }
         Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
+        daoFuncionario.close();
     }
 }
