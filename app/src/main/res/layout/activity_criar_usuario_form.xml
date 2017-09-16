@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/guardlogin">
 
     <TextView
         android:id="@+id/textView5"
@@ -71,8 +72,11 @@
 
     <Button
         android:id="@+id/btnSalvar"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:onClick="salvarFuncionario"
         android:text="Salvar" />
 

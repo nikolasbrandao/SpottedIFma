@@ -3,4 +3,7 @@
     <string name="login">Usuario</string>
     <string name="password">Senha</string>
     <string name="btnLogin">Entrar</string>
+    <string name="title_activity_login">Sign in</string>
+
+
 </resources>
