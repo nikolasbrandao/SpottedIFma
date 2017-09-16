@@ -8,11 +8,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.edu.ifma.labmov.spotted.dao.FuncionarioDao;
+import br.edu.ifma.labmov.spotted.model.Funcionario;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText txtUsuario;
     private EditText txtSenha;
     private Button btnLogin;
+
+    Funcionario funcionario;
+    FuncionarioDao daoFuncionario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +32,19 @@ public class MainActivity extends AppCompatActivity {
     public void validaLogin(View view){
         String usuario = txtUsuario.getText().toString();
         String senha = txtSenha.getText().toString();
-        String torradeira = "Usuario: "+ usuario + "Senha: " + senha;
+        String torradeira;
+        daoFuncionario = new FuncionarioDao(this);
+
+        if(daoFuncionario.findByNomeSenha(usuario,senha)==null){
+            torradeira = "Usuario não cadastrado no sistema";
+        }else {
+            torradeira = "Usuario: "+ usuario + "Senha: " + senha;
+        }
         Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
     }
 
     public void navegaActivityLogin(View view){
-        Intent navegaLogin = new Intent(this, CriarUsuarioForm.class);
-        startActivity(navegaLogin);
+        Intent navegaFormLogin = new Intent(this, CriarUsuarioForm.class);
+        startActivity(navegaFormLogin);
     }
 }

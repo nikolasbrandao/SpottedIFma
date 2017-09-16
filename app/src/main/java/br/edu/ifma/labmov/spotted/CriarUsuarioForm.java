@@ -1,5 +1,6 @@
 package br.edu.ifma.labmov.spotted;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,5 +50,11 @@ public class CriarUsuarioForm extends AppCompatActivity {
         }
         Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
         daoFuncionario.close();
+        navegaActivityLogin();
+    }
+
+    public void navegaActivityLogin(){
+        Intent navegaLogin = new Intent(this, MainActivity.class);
+        startActivity(navegaLogin);
     }
 }
