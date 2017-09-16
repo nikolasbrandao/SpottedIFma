@@ -50,18 +50,31 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="301dp"
-        android:layout_weight="0.56">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="316dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.57">
 
         <ListView
             android:id="@+id/listalunos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
-    </RelativeLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="303dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_weight="0.31"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btselecionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Selecionar Aluno" />
+    </LinearLayout>
 
 </LinearLayout>

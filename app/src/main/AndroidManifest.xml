@@ -24,7 +24,8 @@
         <activity android:name=".CriarUsuarioForm" />
         <activity android:name=".Login" />
         <activity android:name=".ListaOcorrencia" />
-        <activity android:name=".ListaAlunos"></activity>
+        <activity android:name=".ListaAlunos" />
+        <activity android:name=".Associacao"></activity>
     </application>
 
 </manifest>
