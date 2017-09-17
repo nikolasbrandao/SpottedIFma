@@ -6,6 +6,16 @@ public class Infracao {
     private String classificacao;
     private int gravidade;
 
+    public Infracao(){
+
+    }
+
+    public Infracao(String descricao, String classificacao, Integer gravidade) {
+        this.descricao = descricao;
+        this.classificacao = classificacao;
+        this.gravidade = gravidade;
+    }
+
     public int getId() {
         return id;
     }

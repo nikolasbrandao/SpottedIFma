@@ -15,16 +15,12 @@ public class InfracaoDao extends SQLiteOpenHelper{
 
 
     public InfracaoDao(Context context) {
-        super(context, "spotted", null, 1);
+        super(context, "spotted.infracao", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Infracao (" +
-                "id INTEGER PRIMARY KEY, " +
-                "descricao TEXT NOT NULL, " +
-                "classificacao TEXT NOT NULL, " +
-                "gravidade INTEGER NOT NULL)";
+        String sql = "CREATE TABLE Infracao (id INTEGER PRIMARY KEY, descricao TEXT NOT NULL, classificacao TEXT NOT NULL, gravidade INTEGER NOT NULL);";
         db.execSQL(sql);
     }
 
@@ -67,9 +63,12 @@ public class InfracaoDao extends SQLiteOpenHelper{
         String sql = "SELECT * FROM Infracao";
         Cursor cursor = db.rawQuery(sql, null);
 
+        if(cursor.getCount()==0){
+            populaInfracoes();
+        }
+
         while (cursor.moveToNext()){
             Infracao infracao = new Infracao();
-
             infracao.setId(cursor.getInt(cursor.getColumnIndex("id")));
             infracao.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
             infracao.setClassificacao(cursor.getString(cursor.getColumnIndex("classificacao")));
@@ -79,6 +78,48 @@ public class InfracaoDao extends SQLiteOpenHelper{
         cursor.close();
 
         return infracoes;
+    }
+
+    private void populaInfracoes() {
+        String descricao, classificacao;
+        Integer gravidade;
+
+        descricao = "Sapato Colorido";
+        classificacao = "Vestimenta";
+        gravidade = 2;
+        Infracao infracao1 = new Infracao(descricao,classificacao,gravidade);
+
+        insert(infracao1);
+
+        descricao = "Sem fardamento";
+        classificacao = "Vestimenta";
+        gravidade = 4;
+        Infracao infracao2 = new Infracao(descricao,classificacao,gravidade);
+
+        insert(infracao2);
+
+        descricao = "Fora da sala durante o horario";
+        classificacao = "Geral";
+        gravidade = 5;
+        Infracao infracao3 = new Infracao(descricao,classificacao,gravidade);
+
+        insert(infracao3);
+
+        descricao = "Briga nas dependencias da escola";
+        classificacao = "Geral";
+        gravidade = 5;
+        Infracao infracao4 = new Infracao(descricao,classificacao,gravidade);
+
+        insert(infracao4);
+
+
+        descricao = "Atraso na chegada";
+        classificacao = "Geral";
+        gravidade = 2;
+        Infracao infracao5 = new Infracao(descricao,classificacao,gravidade);
+
+        insert(infracao5);
+
     }
 
 }

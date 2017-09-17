@@ -21,7 +21,7 @@ public class AlunoInfracaoDao extends SQLiteOpenHelper {
 
 
     public AlunoInfracaoDao(Context context) {
-        super(context, "spotted", null, 1);
+        super(context, "spotted.aluno.infracao", null, 1);
     }
 
     @Override

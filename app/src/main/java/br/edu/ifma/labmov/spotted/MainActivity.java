@@ -37,14 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
         if(daoFuncionario.findByNomeSenha(usuario,senha)==null){
             torradeira = "Usuario não cadastrado no sistema";
+            Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
         }else {
-            torradeira = "Usuario: "+ usuario + "Senha: " + senha;
+            this.navegaActivityHome();
         }
-        Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
+
     }
 
     public void navegaActivityLogin(View view){
         Intent navegaFormLogin = new Intent(this, CriarUsuarioForm.class);
         startActivity(navegaFormLogin);
+    }
+
+    public void navegaActivityHome(){
+        Intent navegaHome = new Intent(this, OcorrenciasActivity.class);
+        startActivity(navegaHome);
     }
 }

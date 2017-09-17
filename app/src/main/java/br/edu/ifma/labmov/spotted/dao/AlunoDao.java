@@ -14,7 +14,7 @@ import br.edu.ifma.labmov.spotted.model.Aluno;
 public class AlunoDao extends SQLiteOpenHelper {
 
     public AlunoDao(Context context) {
-        super(context, "spotted", null, 1);
+        super(context, "spotted.aluno", null, 1);
     }
 
     @Override

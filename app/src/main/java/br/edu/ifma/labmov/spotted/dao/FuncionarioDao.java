@@ -16,7 +16,7 @@ public class FuncionarioDao extends SQLiteOpenHelper {
 
 
     public FuncionarioDao(Context context) {
-        super(context, "spotted", null, 1);
+        super(context, "spotted.funcionario", null, 1);
     }
 
     @Override
