@@ -1,4 +1,4 @@
-package br.edu.ifma.labmov.spotted.model;
+package br.edu.ifma.labmov.spotted;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import br.edu.ifma.labmov.spotted.ListaOcorrencia;
 import br.edu.ifma.labmov.spotted.R;
 import br.edu.ifma.labmov.spotted.dao.InfracaoDao;
+import br.edu.ifma.labmov.spotted.model.Infracao;
 
 /**
  * Created by Cara1 on 16/09/2017.
