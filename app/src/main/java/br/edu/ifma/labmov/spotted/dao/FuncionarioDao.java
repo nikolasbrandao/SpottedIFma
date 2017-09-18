@@ -98,4 +98,24 @@ public class FuncionarioDao extends SQLiteOpenHelper {
         }
     }
 
+    public Funcionario findByEmail(String email){
+        SQLiteDatabase db = getReadableDatabase();
+        String sql = "SELECT * FROM Funcionario WHERE email = ?";
+        String [] params = {email};
+        Cursor cursor = db.rawQuery(sql,params);
+        if(cursor.getCount()==0){
+            return null;
+        }else{
+            cursor.moveToNext();
+            Funcionario funcionario = new Funcionario();
+            funcionario.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            funcionario.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            funcionario.setEmail(cursor.getString(cursor.getColumnIndex("email")));
+            funcionario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+            cursor.close();
+            return funcionario;
+        }
+    }
+
+
 }

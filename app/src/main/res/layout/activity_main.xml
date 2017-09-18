@@ -53,7 +53,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.51"
         android:clickable="true"
-        android:onClick="navegaActivityScanQRCode"
+        android:onClick="navegaActivityLogin"
         android:text="Criar conta" />
 
 </LinearLayout>

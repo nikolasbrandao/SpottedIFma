@@ -34,20 +34,25 @@ public class CriarUsuarioForm extends AppCompatActivity {
     public void salvarFuncionario(View view){
         String senha = edtSenhaFuncionario.getText().toString();
         String senhaRepetida = edtSenhaRepetidaFuncionario.getText().toString();
+        String email = edtEmailFuncionario.getText().toString();
         String torradeira;
-
+        daoFuncionario = new FuncionarioDao(this);
+        if(daoFuncionario.findByEmail(email) == null){
         if(senha.equals(senhaRepetida)){
             String nome = edtNomeFuncionario.getText().toString();
-            String email = edtEmailFuncionario.getText().toString();
             funcionario.setNome(nome);
             funcionario.setEmail(email);
             funcionario.setSenha(senha);
-            daoFuncionario = new FuncionarioDao(this);
+
             daoFuncionario.insert(funcionario);
             torradeira = "Funcionario salvo com sucesso";
         }else {
             torradeira = "Suas senhas não estão iguais";
         }
+        }else{
+            torradeira = "O usuário já possui cadastro.";
+        }
+
         Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
         daoFuncionario.close();
         navegaActivityLogin();

@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
         String senha = txtSenha.getText().toString();
         String torradeira;
         daoFuncionario = new FuncionarioDao(this);
-
         if(daoFuncionario.findByNomeSenha(usuario,senha)==null){
-            torradeira = "Usuario não cadastrado no sistema";
+            torradeira = "Usuario não cadastrado no sistema ";
             Toast.makeText(this,torradeira,Toast.LENGTH_SHORT).show();
         }else {
             this.navegaActivityHome();
