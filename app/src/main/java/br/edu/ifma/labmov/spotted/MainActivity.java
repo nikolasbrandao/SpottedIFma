@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         Intent navegaFormLogin = new Intent(this, CriarUsuarioForm.class);
         startActivity(navegaFormLogin);
     }
+    public void navegaActivityScanQRCode(View view){
+        Intent navegaScanQRCode= new Intent(this, LerQRCode.class);
+        startActivity(navegaScanQRCode);
+    }
 
     public void navegaActivityHome(){
         Intent navegaHome = new Intent(this, OcorrenciasActivity.class);

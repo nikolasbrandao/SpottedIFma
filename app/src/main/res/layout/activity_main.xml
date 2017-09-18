@@ -50,10 +50,10 @@
         android:id="@+id/txtNovaConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_weight="0.51"
         android:clickable="true"
-        android:onClick="navegaActivityLogin"
-        android:layout_gravity="center_horizontal"
+        android:onClick="navegaActivityScanQRCode"
         android:text="Criar conta" />
 
 </LinearLayout>
