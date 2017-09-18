@@ -42,7 +42,6 @@ public class GerarQRCodeAluno extends AppCompatActivity {
             }
             imgQRCodeAluno.setImageBitmap(bmp);
             txtAlunoCadastrado.setText(aluno);
-
         } catch (WriterException e) {
             e.printStackTrace();
         }

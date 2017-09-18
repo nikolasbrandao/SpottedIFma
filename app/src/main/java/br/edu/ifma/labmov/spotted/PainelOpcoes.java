@@ -13,9 +13,13 @@ public class PainelOpcoes extends AppCompatActivity {
         setContentView(R.layout.activity_painel_opcoes);
     }
 
-    public void navegaActivityAluno(View view){
-        Intent navegaFormLogin = new Intent(this, CriarAlunoForm.class);
-        startActivity(navegaFormLogin);
+    public void navegaActivityCriarAluno(View view){
+        Intent navegaAlunoForm = new Intent(this, CriarAlunoForm.class);
+        startActivity(navegaAlunoForm);
+    }
+    public void navegaActivityBuscarAluno(View view){
+        Intent navegaLerQRCode = new Intent(this, LerQRCode.class);
+        startActivity(navegaLerQRCode);
     }
     public void navegaActivityOcorrencia(View view){
         Intent navegaOcorrencias = new Intent(this, OcorrenciasActivity.class);

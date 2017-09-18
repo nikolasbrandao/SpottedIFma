@@ -19,7 +19,6 @@
         android:id="@+id/txtMatriculaAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -27,5 +26,24 @@
         android:id="@+id/btnQRCodeAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="lerQrCode"
         android:text="Ler QR Code" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome:" />
+
+    <TextView
+        android:id="@+id/txtTurma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turma:" />
+
+    <TextView
+        android:id="@+id/txtAno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ano:" />
 </LinearLayout>

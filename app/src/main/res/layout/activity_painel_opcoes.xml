@@ -7,14 +7,24 @@
     android:background="@drawable/guardlogin">
 
     <TextView
-        android:id="@+id/txtPainelAluno"
+        android:id="@+id/txtCadastroAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.06"
         android:clickable="true"
-        android:onClick="navegaActivityAluno"
-        android:text="Painel de Aluno"
+        android:onClick="navegaActivityCriarAluno"
+        android:text="Cadastro de Aluno"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/txtBuscaAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.06"
+        android:clickable="true"
+        android:onClick="navegaActivityBuscarAluno"
+        android:text="Busca de Aluno"
         android:textSize="18sp" />
 
     <TextView
@@ -25,7 +35,7 @@
         android:layout_weight="0.06"
         android:clickable="true"
         android:onClick="navegaActivityOcorrencia"
-        android:text="Painel de Ocorrências"
+        android:text="Ocorrências"
         android:textSize="18sp" />
 
 
