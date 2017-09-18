@@ -29,7 +29,9 @@
         <activity android:name=".Associacao" />
         <activity android:name=".CadastroOcorrenciasActivity" />
         <activity android:name=".LerQRCode" />
-        <activity android:name=".ScanearQRCode"></activity>
+        <activity android:name=".ScanearQRCode" />
+        <activity android:name=".CriarAlunoForm" />
+        <activity android:name=".PainelOpcoes"></activity>
     </application>
 
 </manifest>

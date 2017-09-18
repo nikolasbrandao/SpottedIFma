@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navegaActivityHome(){
-        Intent navegaHome = new Intent(this, OcorrenciasActivity.class);
+        Intent navegaHome = new Intent(this, PainelOpcoes.class);
         startActivity(navegaHome);
     }
 }
