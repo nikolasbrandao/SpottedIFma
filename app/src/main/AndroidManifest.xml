@@ -25,7 +25,7 @@
         <activity android:name=".CriarUsuarioForm" />
         <activity android:name=".Login" />
         <activity android:name=".OcorrenciasActivity" />
-        <activity android:name=".ListaAlunos" />
+        <activity android:name=".AlunosActivity" />
         <activity android:name=".Associacao" />
         <activity android:name=".CadastroOcorrenciasActivity" />
         <activity android:name=".LerQRCode" />
