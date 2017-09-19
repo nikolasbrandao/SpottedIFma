@@ -116,4 +116,36 @@ public class AlunoInfracaoDao extends SQLiteOpenHelper {
         return alunoInfracoes;
     }
 
+    public List<AlunoInfracao> findAllByAlunoId(int id_aluno) {
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<AlunoInfracao> alunoInfracoes = new ArrayList<AlunoInfracao>();
+        String sql = "SELECT * FROM AlunoInfracao WHERE idAluno = ?";
+        String [] params = { String.valueOf(id_aluno) };
+        Cursor cursor = db.rawQuery(sql,params);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+
+        while (cursor.moveToNext()){
+            AlunoInfracao alunoInfracao = new AlunoInfracao();
+            alunoInfracao.setIdAluno(cursor.getInt(cursor.getColumnIndex("idAluno")));
+            alunoInfracao.setIdInfracao(cursor.getInt(cursor.getColumnIndex("idInfracao")));
+            String dataInfracao = cursor.getString(cursor.getColumnIndex("dataInfracao"));
+            Date data = null;
+            try {
+                data = sdf.parse(dataInfracao);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            alunoInfracao.setDataInfracao(data);
+            int status = cursor.getInt(cursor.getColumnIndex("status"));
+
+            if( cursor.isNull(cursor.getColumnIndex("status")) || status == 0){
+                alunoInfracao.setStatus(false);
+            }else {
+                alunoInfracao.setStatus(true);
+            }
+
+            alunoInfracoes.add(alunoInfracao);
+        }
+        return alunoInfracoes;
+    }
 }
