@@ -102,6 +102,7 @@
             android:lineSpacingExtra="8sp"
             android:text="Cadastrar"
             android:textAlignment="center"
+            android:onClick="associaAlunoInfracao"
             android:textSize="14sp" />
 
         <Button
@@ -112,6 +113,7 @@
             android:layout_weight="1"
             android:background="@android:color/holo_blue_dark"
             android:lineSpacingExtra="8sp"
+            android:onClick="navegaActivityHome"
             android:text="Cancelar" />
     </LinearLayout>
 

@@ -139,4 +139,5 @@ public class InfracaoDao extends SQLiteOpenHelper{
             return infracao;
         }
     }
+
 }
