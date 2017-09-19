@@ -53,7 +53,7 @@ public class OcorrenciasActivity extends AppCompatActivity {
                 Infracao infracao = (Infracao) lista.getItemAtPosition(posicao);
                 //Avançar com a informação do id da infração para a tela de listagem de alunos
                 Intent intent = new Intent(OcorrenciasActivity.this,AlunosActivity.class);
-               Bundle bundle = new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putInt("id",infracao.getId());
                 intent.putExtras(bundle);
                 startActivity(intent);

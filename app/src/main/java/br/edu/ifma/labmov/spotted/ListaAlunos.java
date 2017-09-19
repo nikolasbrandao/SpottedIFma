@@ -48,13 +48,13 @@ public class ListaAlunos extends BaseAdapter{
 
         TextView view_id = (TextView) view.findViewById(R.id.vizualiza_aluno_id);
         TextView view_nome = (TextView) view.findViewById(R.id.visualiza_aluno_nome);
-        TextView view_codigo = (TextView) view.findViewById(R.id.visualisa_codigo);
+        TextView view_codigo = (TextView) view.findViewById(R.id.visualiza_aluno_codigo);
         TextView view_turma = (TextView) view.findViewById(R.id.visualiza_aluno_turma);
         TextView view_ano = (TextView) view.findViewById(R.id.visualiza_aluno_ano);
 
         view_id.setText(String.valueOf(aluno.getId()));
         view_nome.setText(aluno.getNome());
-        view_codigo.setText(aluno.getCodigo());
+        view_codigo.setText(aluno.getCodigo().toString());
         view_turma.setText(aluno.getTurma());
         view_ano.setText(String.valueOf(aluno.getAno()));
 

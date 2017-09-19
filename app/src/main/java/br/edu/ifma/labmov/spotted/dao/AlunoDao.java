@@ -68,8 +68,12 @@ public class AlunoDao extends SQLiteOpenHelper {
     public List<Aluno> findAll(){
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-        String sql = "SELECT * FROM Infracao";
+        String sql = "SELECT * FROM Aluno";
         Cursor cursor = db.rawQuery(sql, null);
+
+        if(cursor.getCount()==0){
+            populaAlunos();
+        }
 
         while (cursor.moveToNext()) {
             Aluno aluno = new Aluno();
@@ -85,6 +89,32 @@ public class AlunoDao extends SQLiteOpenHelper {
 
         cursor.close();
         return alunos;
+    }
+
+    private void populaAlunos() {
+        Aluno aluno1 = new Aluno();
+        aluno1.setNome("Francisco");
+        aluno1.setTurma("304");
+        aluno1.setAno(3);
+        aluno1.setCodigo("CMA304305306");
+
+        insert(aluno1);
+
+        Aluno aluno2 = new Aluno();
+        aluno2.setNome("Aline");
+        aluno2.setTurma("205");
+        aluno2.setAno(2);
+        aluno2.setCodigo("CMC205206207");
+
+        insert(aluno2);
+
+        Aluno aluno3 = new Aluno();
+        aluno3.setNome("Maria");
+        aluno3.setTurma("103");
+        aluno3.setAno(1);
+        aluno3.setCodigo("CCH104105106");
+
+        insert(aluno3);
     }
 
     public Aluno findByCodigo(String codigoAluno){

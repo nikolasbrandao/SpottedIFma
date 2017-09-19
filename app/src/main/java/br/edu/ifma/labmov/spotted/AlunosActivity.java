@@ -27,7 +27,9 @@ public class AlunosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
+
         lista = (ListView) findViewById(R.id.listalunos);
+
         btselecionar = (Button) findViewById(R.id.btselecionar);
         //Pegando o ID da ocorrencia vindo da tela de ocorrencias
         Intent intent = getIntent();
@@ -42,7 +44,9 @@ public class AlunosActivity extends AppCompatActivity {
         ArrayList<Aluno> alunos = new ArrayList<Aluno>();
         alunodao = new AlunoDao(this);
         alunos = (ArrayList<Aluno>)alunodao.findAll();
+
         ListaAlunos adapteralunos= new ListaAlunos(alunos,this);
+
         lista.setAdapter(adapteralunos);
 
     }
