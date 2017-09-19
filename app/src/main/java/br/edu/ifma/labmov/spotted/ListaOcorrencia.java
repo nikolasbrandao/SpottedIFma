@@ -57,12 +57,6 @@ public class ListaOcorrencia extends BaseAdapter {
 
         // -- e bla bla bla -- //
 
-
-
-
-
-
-
         return view;
     }
 }

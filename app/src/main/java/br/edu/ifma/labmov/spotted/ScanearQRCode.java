@@ -31,7 +31,7 @@ public class ScanearQRCode extends AppCompatActivity implements ZXingScannerView
 
     @Override
     public void handleResult(Result result) {
-        LerQRCode.getTxtMatriculaAluno().setText(result.getText());
+        AlunosActivity.getEdtCodigo().setText(result.getText());
         onBackPressed();
     }
 

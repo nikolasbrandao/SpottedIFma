@@ -1,6 +1,7 @@
 package br.edu.ifma.labmov.spotted;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 import br.edu.ifma.labmov.spotted.model.Aluno;
 
-public class ListaAlunos extends BaseAdapter{
+public class ListaAlunos extends BaseAdapter {
 
     private ArrayList<Aluno> alunos;
     private Activity act;
@@ -61,4 +62,5 @@ public class ListaAlunos extends BaseAdapter{
 
         return view;
     }
+
 }

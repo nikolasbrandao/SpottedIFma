@@ -28,25 +28,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
-            android:text="Nome:"
+            android:text="Código:"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtnome"
+            android:id="@+id/edtCodigoQR"
             android:layout_width="84dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Digite o nome do aluno" />
+            android:text="Código do aluno" />
 
         <ImageButton
             android:id="@+id/btpesquisar"
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/search"
-            android:layout_weight="0.00" />
+            android:layout_weight="0.00"
+            app:srcCompat="@drawable/search" />
 
     </LinearLayout>
 
@@ -74,7 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/holo_blue_dark"
-            android:text="Selecionar Aluno" />
+            android:onClick="navegaActivityCriarAluno"
+            android:text="Adicionar Aluno" />
     </LinearLayout>
 
 </LinearLayout>

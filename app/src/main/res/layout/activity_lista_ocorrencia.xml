@@ -24,7 +24,8 @@
         android:id="@+id/listocorrencias"
         android:layout_width="wrap_content"
         android:layout_height="294dp"
-        android:layout_weight="0.62" >
+        android:layout_weight="0.62"
+        android:clickable="false">
 
 
     </ListView>
