@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -34,8 +36,7 @@ public class AlunosActivity extends AppCompatActivity {
         //Pegando o ID da ocorrencia vindo da tela de ocorrencias
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        int id = bundle.getInt("id"); //id
-        Toast.makeText(this,"id" + id, Toast.LENGTH_SHORT).show(); // só testando pra ver se o id passa mesmo
+        int id = bundle.getInt("id_Infracao");
     }
 
     @Override
@@ -44,10 +45,21 @@ public class AlunosActivity extends AppCompatActivity {
         ArrayList<Aluno> alunos = new ArrayList<Aluno>();
         alunodao = new AlunoDao(this);
         alunos = (ArrayList<Aluno>)alunodao.findAll();
-
         ListaAlunos adapteralunos= new ListaAlunos(alunos,this);
-
         lista.setAdapter(adapteralunos);
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> lista, View item, int posicao, long id) {
+                Aluno aluno = (Aluno) lista.getItemAtPosition(posicao);
+                Intent intencaoAnterior = getIntent();
+
+                Intent intent = new Intent(AlunosActivity.this, Associacao.class);
+                Bundle bundle = intencaoAnterior.getExtras();
+                bundle.putInt("id_Aluno",aluno.getId());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 }

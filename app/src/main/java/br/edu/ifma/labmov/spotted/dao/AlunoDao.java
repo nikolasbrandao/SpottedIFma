@@ -137,4 +137,23 @@ public class AlunoDao extends SQLiteOpenHelper {
         }
     }
 
+    public Aluno findById(int id_aluno) {
+        SQLiteDatabase db = getReadableDatabase();
+        String sql = "SELECT * FROM Aluno WHERE id = ?";
+        String [] params = { String.valueOf(id_aluno) };
+        Cursor cursor = db.rawQuery(sql,params);
+        if(cursor.getCount()==0){
+            return null;
+        }else{
+            cursor.moveToNext();
+            Aluno aluno = new Aluno();
+            aluno.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            aluno.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            aluno.setCodigo(cursor.getString(cursor.getColumnIndex("codigo")));
+            aluno.setTurma(cursor.getString(cursor.getColumnIndex("turma")));
+            aluno.setAno(cursor.getInt(cursor.getColumnIndex("ano")));
+            cursor.close();
+            return aluno;
+        }
+    }
 }

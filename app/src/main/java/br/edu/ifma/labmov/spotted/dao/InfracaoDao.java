@@ -122,4 +122,21 @@ public class InfracaoDao extends SQLiteOpenHelper{
 
     }
 
+    public Infracao findById(int id_infracao) {
+        SQLiteDatabase db = getReadableDatabase();
+        String sql = "SELECT * FROM Infracao WHERE id = ?";
+        String [] params = { String.valueOf(id_infracao) };
+        Cursor cursor = db.rawQuery(sql,params);
+        if(cursor.getCount()==0){
+            return null;
+        }else {
+            cursor.moveToNext();
+            Infracao infracao = new Infracao();
+            infracao.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            infracao.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
+            infracao.setClassificacao(cursor.getString(cursor.getColumnIndex("classificacao")));
+            infracao.setGravidade(cursor.getInt(cursor.getColumnIndex("gravidade")));
+            return infracao;
+        }
+    }
 }
