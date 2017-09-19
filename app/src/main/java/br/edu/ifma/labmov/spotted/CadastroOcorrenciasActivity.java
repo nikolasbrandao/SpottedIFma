@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import br.edu.ifma.labmov.spotted.dao.InfracaoDao;
 import br.edu.ifma.labmov.spotted.model.Infracao;
 
@@ -17,7 +19,7 @@ public class CadastroOcorrenciasActivity extends AppCompatActivity{
     private TextView gravidade;
     private Button btncadastro;
     private Button btncancelar;
-    //private InfracaoDao infradao;
+    private InfracaoDao infradao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +32,35 @@ public class CadastroOcorrenciasActivity extends AppCompatActivity{
         btncadastro = (Button) findViewById(R.id.btcadastrar_ocorrencia);
         btncancelar = (Button) findViewById(R.id.btcancelar_cadastro);
 
+
+        infradao = new InfracaoDao(this);
         btncadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int gravidade_int = -1;
-                Intent intent = new Intent(CadastroOcorrenciasActivity.this,ListaOcorrencia.class);
+
                 Infracao infracao = new Infracao();
                 infracao.setDescricao(descricao.getText().toString());
                 infracao.setClassificacao(classificacao.getText().toString());
                 gravidade_int = Integer.parseInt(gravidade.getText().toString());
                 infracao.setGravidade(gravidade_int);
-                //infradao.insert(infracao);
-                startActivity(intent);
+                infradao.insert(infracao);
+                //Intent intent = new Intent(CadastroOcorrenciasActivity.this,ListaOcorrencia.class);
+                //startActivity(intent);
+                finish();
             }
         });
 
         btncancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CadastroOcorrenciasActivity.this,ListaOcorrencia.class);
-                startActivity(intent);
+                //Intent intent = new Intent(CadastroOcorrenciasActivity.this,ListaOcorrencia.class);
+                //startActivity(intent);
+                finish();
             }
         });
+
     }
 
 

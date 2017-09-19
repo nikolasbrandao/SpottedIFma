@@ -50,7 +50,11 @@ public class ListaOcorrencia extends BaseAdapter {
         TextView view_classificacao = (TextView) view.findViewById(R.id.visualiza_classificacao);
 
         // -- dá um set nos campos -- //
+        view_codigo.setText(String.valueOf(inf.getId()));
         view_descricao.setText(inf.getDescricao());
+        view_gravidade.setText(String.valueOf(inf.getGravidade()));
+        view_classificacao.setText(inf.getClassificacao());
+
         // -- e bla bla bla -- //
 
 
